@@ -27,9 +27,15 @@ project_image: $(PROJECTFILES) $(RENVFILES)
 	#docker build -t livzhaidocker/project_image .
 	touch $@
 
-## make rule for docker run, and mounting report directory
+## if have dockerfile: make rule for docker run, and mounting report directory
 report/Report.html:project_image
 	docker run -v "$$(pwd)/report":/home/rstudio/project/report project_image
+	
+## if no dockerfile, while pull image from dockerhub: make rule for docker run
+.PHONY: report
+report: 
+	docker run -v "$$(pwd)/report":/home/rstudio/project/report livzhaidocker/project_image:final_project_tag
+
 
 .PHONY: clean
 clean:

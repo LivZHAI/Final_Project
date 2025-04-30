@@ -57,11 +57,10 @@ To generate the final report, follow these steps:
 
 **Way 1:**\
 Directly pull the image from DockerHub to your local:\
-`docker pull livzhaidocker/project_image: final_project_tag`
+`docker pull livzhaidocker/project_image:final_project_tag`
 
 then run the image and make report in the container:\
-`docker run -it livzhaidocker/project_image:final_project_tag`\
-`make report/Report.html`
+`make report`
 
 Link to The Image on DockerHub: <https://hub.docker.com/repository/docker/livzhaidocker/project_image/general>
 
