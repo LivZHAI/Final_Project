@@ -1,5 +1,5 @@
 ---
-title: "Final Project 4"
+title: "Final Project"
 author: "Siyu Zhai"
 date: '`r Sys.Date()`'
 output:

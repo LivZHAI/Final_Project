@@ -30,13 +30,7 @@ This data set contains information on 1000 patients with lung cancer, including 
 -   generates a stacked bar chart for variable of symptom, saves as `figure3_barSymptom.png`
 -   all figures are output in `output/` folder
 
-`code/03_make_regressions.R`
-
--   generates logit regression of outcome on exposure, saves as `regression1_exposure.rds`
--   generates logit regression of outcome on symptom, saves as `regression2_symptom.rds`
--   all regressions are saved in `output/` folder
-
-`code/04_render_report.R`
+`code/03_render_report.R`
 
 -   renders `Interim_Report.Rmd`
 
@@ -56,3 +50,22 @@ To generate the final report, follow these steps:
     If you still feel a little bit cumbersome to synchronize packages, don't worry! Here is another much easier way. Please just run `make install` in your terminal, and everything is done!
 
 3.  **Change terminal path to the project and click `make` in your terminal**
+
+------------------------------------------------------------------------
+
+## 🔗 Instructions for DockerHub and Building Image
+
+**Way 1:**\
+Directly pull the image from DockerHub to your local:\
+`docker pull livzhaidocker/project_image: final_project_tag`
+
+then run the image and make report in the container:\
+`docker run -it livzhaidocker/project_image:final_project_tag`\
+`make report/Report.html`
+
+Link to The Image on DockerHub: <https://hub.docker.com/repository/docker/livzhaidocker/project_image/general>
+
+**Way 2:**\
+Since actually the project folder includes `Dockerfile`, you could rebuild the image and run the automated version of the image with typing the following instruction in your terminal:\
+`docker build -t project_image .` （or use Makefile to do so: `make project_image`)\
+`make report/Report.html`
