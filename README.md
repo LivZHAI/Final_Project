@@ -62,7 +62,7 @@ Directly pull the image from DockerHub to your local:\
 then run the image and make report in the container:\
 `make report`
 
-Link to The Image on DockerHub: <https://hub.docker.com/repository/docker/livzhaidocker/project_image/general>
+Link to The Image on DockerHub: https://hub.docker.com/u/livzhaidocker
 
 **Way 2:**\
 Since actually the project folder includes `Dockerfile`, you could rebuild the image and run the automated version of the image with typing the following instruction in your terminal:\
